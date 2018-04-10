@@ -9,7 +9,7 @@ This project collect the thrift executables files for some platform, now includi
 If the target executable file you need is not in my project, you can contribute it to my repository. 
 Maybe you need to compile by yourself because I only have the windows and linux environment.
 
-**TODO: use docker to compile artifact for every platform, reference to [protoc-artifacts](https://github.com/google/protobuf/tree/master/protoc-artifacts)**
+**When do configuration, only nodejs is excluded (--with-nodejs=no), but this project best support Java, others like python should do local install**
 
 The system name and arch reference to os-maven-plugin: [trustin/os-maven-plugin](https://github.com/trustin/os-maven-plugin)
 
@@ -46,6 +46,11 @@ ppc_64 | if the arch is ppc64
 ppcle_64 | if the arch is ppc64le
 s390_32 | if the arch is s390
 s390_64 | if the arch is s390x
+
+## Reference
+
+* [protoc-artifacts](https://github.com/google/protobuf/tree/master/protoc-artifacts)
+* [trustin/os-maven-plugin](https://github.com/trustin/os-maven-plugin)
 
 ## Contact
 
