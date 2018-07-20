@@ -6,8 +6,53 @@
 
     <groupId>io.potter.thrift</groupId>
     <artifactId>thriftc</artifactId>
-    <version>0.11.0</version>
+    <version>${thrift.version}-SNAPSHOT</version>
     <packaging>pom</packaging>
+
+    <name>Thrift Executable Compiler</name>
+
+    <properties>
+        <thrift.version>0.11.0</thrift.version>
+    </properties>
+
+    <url>https://github.com/potter-io/thrift-compiler</url>
+    <description>thrift executable artifact for win/linux/os platform</description>
+
+    <developers>
+        <developer>
+            <name>Zhang Fucheng</name>
+            <email>zhfchdev@gmail.com</email>
+            <organization>potter-io</organization>
+            <url>http://github.potter.io</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <url>https://github.com/potter-io</url>
+        <connection>scm:git:https://github.com/potter-io/thrift-compiler.git</connection>
+        <developerConnection>scm:git:https://github.com/potter-io/thrift-compiler.git</developerConnection>
+    </scm>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>sonatype-oss</id>
+            <name>OSS Snapshots Repository</name>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>sonatype-oss</id>
+            <name>OSS Staging Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <extensions>
@@ -32,12 +77,12 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>${basedir}/exe/thriftc-0.11.0.exe</file>
+                                    <file>${basedir}/exe/thriftc-${thrift.version}.exe</file>
                                     <classifier>windows-x86_64</classifier>
                                     <type>exe</type>
                                 </artifact>
                                 <artifact>
-                                    <file>${basedir}/exe/thriftc-0.11.0.exe</file>
+                                    <file>${basedir}/exe/thriftc-${thrift.version}.exe</file>
                                     <classifier>windows-x86_32</classifier>
                                     <type>exe</type>
                                 </artifact>
@@ -50,7 +95,22 @@
                         </configuration>
                     </execution>
                 </executions>
+            </plugin>            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
+
         </plugins>
     </build>
 

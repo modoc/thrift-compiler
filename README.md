@@ -15,6 +15,10 @@ The system name and arch reference to os-maven-plugin: [trustin/os-maven-plugin]
 
 The following is the overview of the available name and arch. 
 
+#### Attention
+
+**The version of this project is same with thrift. New arch or system name will be added for every version. So only SNAPSHOT will used for this project.**
+
 #### name
 
 value | description
