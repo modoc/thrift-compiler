@@ -15,9 +15,26 @@ The system name and arch reference to os-maven-plugin: [trustin/os-maven-plugin]
 
 The following is the overview of the available name and arch. 
 
-#### Attention
+### Attention
 
 **The version of this project is same with thrift. New arch or system name will be added for every version. So only SNAPSHOT will used for this project.**
+
+So set the repository first:
+
+    <repositories>
+        <repository>
+            <id>sonatype-oss-snapshot</id>
+            <name>sonatype-oss-snapshot</name>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
 #### name
 
